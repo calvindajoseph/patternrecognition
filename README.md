@@ -40,8 +40,8 @@ Then, we changed 'agreed' and 'disagreed' text from the label column with relate
 2. 'unrelated'
 
 And encode them to:
-1.'related' to 0s
-2.'unrelated' to 1s
+1. 'related' to 0s
+2. 'unrelated' to 1s
 
 From title1_en and title2_en, we deleted every special characters and html elements.
 
