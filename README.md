@@ -38,6 +38,7 @@ The WDSM 2019 dataset contained eight columns. We dropped five and kept three:
 Then, we changed 'agreed' and 'disagreed' text from the label column with related. There are two classes left in the label:
 1. 'related'
 2. 'unrelated'
+
 And encode them to:
 'related' to 0s
 'unrelated' to 1s
