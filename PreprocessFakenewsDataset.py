@@ -23,6 +23,7 @@ le = LabelEncoder()
 def drop_columns(df, drop_column_names):
     """Drop columns inside drop_column_names from dataframe df"""
     df = df.drop(drop_column_names, axis=1)
+    df = df.dropna()
     return df
 
 def pre_process_columns_fakenews(df):

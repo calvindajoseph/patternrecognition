@@ -1,0 +1,38 @@
+Fakenews Dataset Analysis
+
+Dataset First Five Rows
+                                           title1_en  ... label
+0  there are two new old age insurance benefits f...  ...     1
+1   if you do not come to shenzhen sooner or late...  ...     1
+2   if you do not come to shenzhen sooner or late...  ...     1
+3   if you do not come to shenzhen sooner or late...  ...     1
+4   how to discriminate oil from gutter oil by me...  ...     0
+
+[5 rows x 3 columns]
+
+Dataset Object Types
+title1_en    object
+title2_en    object
+label         int64
+dtype: object
+
+Dataset Missing Values
+title1_en    0
+title2_en    0
+label        0
+dtype: int64
+
+Dataset Information
+None
+
+Dataset Categorical Description
+                                                title1_en                                          title2_en
+count                                              320552                                             320552
+unique                                              67815                                             135981
+top     someone from the people s hospital of cengxi c...  the world s first talking dog shocked 6 billio...
+freq                                                  755                                                 66
+
+Dataset Label Value Counts
+1    219313
+0    101239
+Name: label, dtype: int64
