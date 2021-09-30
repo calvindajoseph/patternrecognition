@@ -1,0 +1,57 @@
+Model Training
+==============
+
+Training Time
+=============
+Average per batch: 8s
+Average per epoch: 72m 10s
+Total training time: 6h 4m 39s
+
+Epoch 1
+=======
+
+Train loss: 0.4803954757153988
+Train acc: 0.7698125
+Val loss: 0.41271493397653103
+Val acc: data corrupted
+
+Epoch 2
+=======
+
+Train loss: 0.2823952066153288
+Train acc: 0.8845
+Val loss: 0.4315466843545437
+Val acc: 0.8215
+
+Epoch 3
+=======
+
+Train loss: 0.1292046754169278
+Train acc: 0.9548125
+Val loss: 0.6711445320397615
+Val acc: 0.8205
+
+Epoch 4
+=======
+
+Train loss: 0.058980955589795485
+Train acc: 0.983375
+Val loss: 0.9874190501868725
+Val acc: 0.8165
+
+Epoch 5
+=======
+
+Train loss: 0.031607043632073326
+Train acc: 0.992125
+Val loss: 1.1639591604471207
+Val acc: 0.813
+
+Model Testing
+=============
+
+Testing time: 3m 4s
+
+On epoch=5:
+Test loss: 1.1735573336482048
+Test acc: 0.8125
