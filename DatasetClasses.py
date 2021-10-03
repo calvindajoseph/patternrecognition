@@ -6,6 +6,10 @@ from torch import nn, optim
 from torch.utils.data import Dataset, DataLoader
 import torch.nn.functional as F
 
+from transformers import BertTokenizer
+
+from FileManager import FileManager
+
 class DatasetAnalysisToolpack():
     
     def dataset_analysis_basic(self, df, df_title='', include_label_plot=False):
@@ -222,3 +226,34 @@ class DataLoaderProcessor():
             batch_size=batch_size,
             shuffle=True,
         )
+    
+    def sample_text_loader(self, text_one, text_two, tokenizer, max_length):
+        encoding = tokenizer(
+            text_one, text_two,
+            add_special_tokens=True,
+            max_length=max_length,
+            truncation=True,
+            padding='max_length',
+            return_token_type_ids=True,
+            return_tensors='pt')
+        
+        return {
+            'text_one': text_one,
+            'text_two': text_two,
+            'input_ids': encoding['input_ids'].flatten(),
+            'token_type_ids': encoding['token_type_ids'].flatten(),
+            'attention_mask': encoding['attention_mask'].flatten()
+        }
+
+class TokenizerProcessor():
+    
+    def __init__(self, load_tokenizer=True, vocab_name='bert-base-uncased'):
+        if load_tokenizer:
+            tokenizer = FileManager.load_tokenizer()
+        else:
+            tokenizer = BertTokenizer.from_pretrained(vocab_name)
+        
+        self.tokenizer = tokenizer
+    
+    def __call__(self):
+        return self.tokenizer

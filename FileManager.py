@@ -4,6 +4,8 @@ import io
 import pandas as pd
 import numpy as np
 
+from transformers import BertTokenizer
+
 class FileManager:
     
     def __init__(self):
@@ -14,13 +16,17 @@ class FileManager:
         self.filename_fakenews_dataset = 'fake_news_classification_challenge.csv'
         
         self.filename_preprocessed_fakenews = 'preprocessed_fakenews.csv'
-        self.filename_preprocessed_fakenews_smaller_one = 'preprocessed_fakenews_smaller_1.csv'
+        self.filename_preprocessed_fakenews_smaller = ['preprocessed_fakenews_smaller_1.csv',
+                                                       'preprocessed_fakenews_smaller_2.csv',
+                                                       'preprocessed_fakenews_smaller_3.csv',
+                                                       'preprocessed_fakenews_smaller_4.csv',
+                                                       'preprocessed_fakenews_smaller_5.csv']
         
         self.filename_fakenews_dataset_analysis = 'fake_news_classification_analysis.txt'
         
         self.filename_preprocessed_fakenews_analysis = 'preprocessed_fakenews_analysis.txt'
         
-        self.filename_tokenizer = ''
+        self.dir_tokenizer = 'models/tokenizer/'
         
     
     def import_csv_to_dataframe(self, foldername, filename):
@@ -95,11 +101,17 @@ class FileManager:
             df = self.import_csv_to_dataframe(self.folder_dataset, self.filename_preprocessed_fakenews)
         return df
     
-    def load_preprocessed_fakenews_dataset_smaller(self, filename=None, foldername=None):
+    def load_preprocessed_fakenews_dataset_smaller(self, file_number=1, filename=None, foldername=None):
         """Load small preprocessed fakenews dataset from dataset/preprocessed_fakenews_smaller folder to a Pandas Dataframe.
         
         Parameters
         =========
+        file_number: int, default=1
+            The file number of the smaller dataset.
+        
+        filename: string, default=None
+            The filename of the smaller datset.
+        
         foldername: string, default=None
             The foldername of the folder that contains the dataset.
         
@@ -109,12 +121,32 @@ class FileManager:
             The dataframe of the preprocessed fakenews dataset.
         """
         if filename == None:
-            filename = self.filename_preprocessed_fakenews_smaller_one
+            filename = self.filename_preprocessed_fakenews_smaller[file_number-1]
+        
         if foldername:
             df = self.import_csv_to_dataframe(foldername, filename)
         else:
             df = self.import_csv_to_dataframe(self.folder_dataset_preprocessed_fakenews_smaller, filename)
         return df
+    
+    def load_tokenizer(self, token_dir=None):
+        """Load BERT tokenizer from directory.
+        
+        Parameters
+        =========
+        token_dir: string, default=None
+            The directory of the tokenizer.
+        
+        Returns
+        =======
+        tokenizer: BertTokenizer
+            The BertTokenizer.
+        """
+        if token_dir:
+            tokenizer = BertTokenizer.from_pretrained(token_dir)
+        else:
+            tokenizer = BertTokenizer.from_pretrained(self.dir_tokenizer)
+        return tokenizer
     
     def save_preprocessed_fakenews_dataset(self, df, foldername=None, filename=None):
         """Save preprocessed fakenews dataset to dataset folder as csv.
