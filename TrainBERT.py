@@ -18,6 +18,8 @@ from FileManager import FileManager
 from DatasetClasses import DataLoaderProcessor
 from ModelClasses import SequenceClassifier
 
+import config
+
 # Create FileManager instance.
 fileManager = FileManager()
 
@@ -25,29 +27,32 @@ fileManager = FileManager()
 data_loader = DataLoaderProcessor()
 
 # Class names
-class_names = ['related', 'unrelated']
+class_names = config.class_names
 
 # Load dataframe.
-df = fileManager.load_preprocessed_fakenews_dataset_smaller(file_number=2)
+df = fileManager.load_preprocessed_fakenews_dataset_smaller(file_number=1)
 
 # Set random state.
-RANDOM_STATE = 42
+RANDOM_STATE = config.RANDOM_STATE
 
 # Set the pretrained vocabulary tokenizer from Huggingface library.
-VOCAB_NAME = 'bert-base-uncased'
+VOCAB_NAME = config.VOCAB_NAME
 
 # Set the pretrained BERTModel from Huggingface library.
-PRE_TRAINED_MODEL_NAME = 'bert-base-uncased'
+PRE_TRAINED_MODEL_NAME = config.PRE_TRAINED_MODEL_NAME
+
+# Set model folder
+model_folder = 'model_epochs_19_Oct'
 
 # Set DataLoader hyperparameters
-MAX_LENGTH = 100
-BATCH_SIZE_TRAINING = 32
-BATCH_SIZE_VALIDATION = 128
-BATCH_SIZE_TESTING = 128
+MAX_LENGTH = config.MAX_LENGTH
+BATCH_SIZE_TRAINING = config.BATCH_SIZE_TRAINING
+BATCH_SIZE_VALIDATION = config.BATCH_SIZE_VALIDATION
+BATCH_SIZE_TESTING = config.BATCH_SIZE_TESTING
 
 # Set model hyperparameters
-LEARNING_RATE=5e-5
-EPOCHS = 3
+LEARNING_RATE=config.LEARNING_RATE
+EPOCHS = config.EPOCHS
 
 # If GPU is available, set device to GPU.
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -209,7 +214,7 @@ for epoch in range(EPOCHS):
     val_losses.append(val_loss)
     val_accuracies.append(val_acc)
     
-    filename = f'models/model_epochs/model_state_{epoch}.pth'
+    filename = f'models/{model_folder}/model_state_{epoch+1}.pth'
     torch.save(model.state_dict(), filename)
     
     epoch_time_elapsed = time.time() - epoch_time_start
@@ -221,7 +226,7 @@ print(f'Training runtime: {train_time_delta}')
 
 testing_time_start = time.time()
 test_acc, test_loss = eval_model(model, test_data_loader, loss_fn,
-                                 device, len(X_val))
+                                 device, len(X_test))
 
 print(f'Test loss: {test_loss}; Accuracy: {test_acc}')
 test_time_elapsed = time.time() - testing_time_start
@@ -240,4 +245,3 @@ for idx in range(EPOCHS):
     if best_val_acc < val_accuracies[idx]:
         best_val_acc = val_accuracies[idx]
         best_epoch = idx + 1
-

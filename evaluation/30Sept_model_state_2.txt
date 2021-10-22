@@ -1,0 +1,13 @@
+30 Sept Model Epoch 2
+
+Mean score: 0.8137999773025513
+Standard Deviation: 0.009785705246031284
+
+              precision    recall  f1-score   support
+
+     related       0.83      0.79      0.81     10000
+   unrelated       0.80      0.84      0.82     10000
+
+    accuracy                           0.81     20000
+   macro avg       0.81      0.81      0.81     20000
+weighted avg       0.81      0.81      0.81     20000
