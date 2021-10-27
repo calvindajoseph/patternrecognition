@@ -1,6 +1,18 @@
+"""
+Preprocess the initial dataset.
+
+Includes dropping columns and encoding the target class.
+
+Partition the dataset into smaller datasets in the end.
+"""
+
+# Import re for regex
 import re
+
+# Import LabelEncoder
 from sklearn.preprocessing import LabelEncoder
 
+# Import FileManager and DatasetPartitioner
 from FileManager import FileManager
 from DatasetClasses import DatasetPartitioner
 
@@ -18,7 +30,8 @@ drop_column_names = ['id',
 le = LabelEncoder()
 
 def drop_columns(df, drop_column_names):
-    """Drop columns inside drop_column_names and drop all na values from dataframe df.
+    """
+    Drop columns inside drop_column_names and drop all na values from dataframe df.
     
     Parameters
     ==========
@@ -38,7 +51,8 @@ def drop_columns(df, drop_column_names):
     return df
 
 def pre_process_columns_fakenews(df):
-    """Drop special characters from title1_en and title2_en and encode label (0: related, 1: unrelated)
+    """
+    Drop special characters from title1_en and title2_en and encode label (0: related, 1: unrelated)
     
     Steps
     =====

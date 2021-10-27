@@ -3,7 +3,7 @@ warnings.filterwarnings("ignore")
 
 from transformers import BertTokenizer
 
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 
 import numpy as np
 
@@ -37,7 +37,10 @@ test_data_loader = data_loader.fakenews_dataset_loader(X, y, tokenizer,config.MA
 # Final Evaluation
 y_true, y_pred, accuracy_per_batch = classifier.model_evaluation(test_data_loader)
 
+# Print Evaluation
 print(f'Mean score: {np.mean(accuracy_per_batch)}')
 print(f'Standard Deviation score: {np.std(accuracy_per_batch)}')
 
 print(classification_report(y_true, y_pred, target_names=config.class_names))
+
+print(confusion_matrix(y_true, y_pred))

@@ -1,18 +1,42 @@
+"""
+Contains all classes related to the dataset.
+"""
+
+# Import modules
 import pandas as pd
 import matplotlib.pyplot as plt
 
 import torch
-from torch import nn, optim
 from torch.utils.data import Dataset, DataLoader
-import torch.nn.functional as F
 
 from transformers import BertTokenizer
 
 from FileManager import FileManager
 
 class DatasetAnalysisToolpack():
+    """
+    For analysis purposes.
+    
+    Add method for analysis functions.
+    """
     
     def dataset_analysis_basic(self, df, df_title='', include_label_plot=False):
+        """
+        Funtion for Pandas dataframe analysis.
+        
+        Parameters
+        ==========
+        
+        df: Pandas Dataframe
+            The dataframe to be analyzed.
+        
+        df_title: string, default=''
+            The title of the dataframe
+        
+        include_label_plot: boolean
+            If true, added a plot of the target label.
+        
+        """
         
         print(f'{df_title} Analysis')
         print('=' * 10)
@@ -137,6 +161,33 @@ class DatasetPartitioner():
         return df_new
     
     def __call__(self, df, labelname='label', n_label=2, autoscale='n_sample', shuffle=True):
+        """
+        Partition dataset
+        
+        Parameters
+        ==========
+        df: Pandas Dataframe
+            A large pandas dataframe to break down.
+        
+        labelname: string
+            The column name of the target.
+        
+        n_label: int, default=2
+            Number of classes.
+        
+        autoscale: string
+            The mode for autoscaling.
+        
+        shuffle: boolean
+            If true the dataset will be shuffled.
+        
+        Returns
+        =======
+        
+        df_list: list
+            A list of dataframe that was a part of the original dataframe.
+        """
+        
         try:
             if(autoscale == 'n_sample'):
                 self._autoscaling_by_n_sample(df, labelname)
@@ -173,7 +224,27 @@ class DatasetPartitioner():
             return None
 
 class DatasetProcessor(Dataset):
+    """DatasetProcessor
+    ==================
+    Dataset object from pytorch Dataset
     
+    Parameters
+    ==========
+    texts1: list or numpy.ndarray
+        A list of the first sentences.
+    
+    texts2: list or numpy.ndarray
+        A list of the second sentences.
+    
+    labels: list or numpy.ndarray
+        A list of target variable.
+    
+    tokenizer: BertTokenizer
+        The tokenizer.
+    
+    max_length: int
+        The max length of each token. Deep learning requires a fixed amount of input.
+    """
     def __init__(self, texts1, texts2, labels, tokenizer, max_length):
         self.texts1 = texts1
         self.texts2 = texts2
@@ -185,6 +256,7 @@ class DatasetProcessor(Dataset):
         return len(self.texts1)
     
     def __getitem__(self, item):
+        
         text1 = str(self.texts1[item])
         text2 = str(self.texts2[item])
         label = self.labels[item]
@@ -211,8 +283,37 @@ class DatasetProcessor(Dataset):
         }
 
 class DataLoaderProcessor():
+    """DataLoaderProcessor
+    ==================
+    A class to process any data loader
+    """
     
     def fakenews_dataset_loader(self, df, labels, tokenizer, max_length, batch_size):
+        """
+        Process Pandas Dataframe into pytorch DataLoader
+        
+        Parameters
+        ==========
+        df: Pandas DataFrame
+            The original dataframe.
+        
+        labels: list or numpy.ndarray
+            The list of classes.
+        
+        tokenizer: BertTokenizer
+            The tokenizer.
+        
+        max_length: int
+            The max length of each token. Deep learning requires a fixed amount of input.
+        
+        batch_size: int
+            The batch size.
+        
+        Returns
+        =======
+        data_loader: pytorch DataLoader
+            The dataloader ready to load to the model.
+        """
         dataset = DatasetProcessor(
             texts1=df.title1_en.to_numpy(),
             texts2=df.title2_en.to_numpy(),
@@ -228,6 +329,29 @@ class DataLoaderProcessor():
         )
     
     def sample_text_loader(self, text_one, text_two, tokenizer, max_length):
+        """
+        Tokenize two sentences into the features
+        
+        Parameters
+        ==========
+        text_one: string
+            First text.
+        
+        text_two: string
+            Second text.
+        
+        tokenizer: BertTokenizer
+            The tokenizer.
+        
+        max_length: int
+            The max length of each token. Deep learning requires a fixed amount of input.
+        
+        Returns
+        =======
+        tokens: dictionary
+            The dictionary of the features.
+        """
+        
         encoding = tokenizer(
             text_one, text_two,
             add_special_tokens=True,
@@ -246,7 +370,12 @@ class DataLoaderProcessor():
         }
 
 class TokenizerProcessor():
+    """TokenizerProcessor
+    ==================
+    The Tokenizer.
     
+    Load the tokenizer.
+    """
     def __init__(self, load_tokenizer=True, vocab_name='bert-base-uncased'):
         if load_tokenizer:
             tokenizer = FileManager.load_tokenizer()

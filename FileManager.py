@@ -1,12 +1,24 @@
-import os
+"""
+Manages our file.
+
+This class is responsible to import and export files.
+"""
+
+# Import io module for input output
 import io
 
+# Import pandas
 import pandas as pd
-import numpy as np
 
+# Import BertTokenizer
 from transformers import BertTokenizer
 
 class FileManager:
+    """
+    The filemanager.
+    
+    The attributes are directories of various datasets and tokens.
+    """
     
     def __init__(self):
         self.folder_dataset = 'datasets'
@@ -30,6 +42,21 @@ class FileManager:
         
     
     def import_csv_to_dataframe(self, foldername, filename):
+        """Load a pandas dataframe
+        
+        Parameters
+        =========
+        foldername: string
+            The foldername of the folder that contains the dataset.
+        
+        filename: string
+            The filename of the csv file.
+        
+        Returns
+        =======
+        df: Dataframe
+            The dataframe.
+        """
         directory = foldername + '/' + filename
         
         try:
@@ -41,6 +68,20 @@ class FileManager:
             return None
     
     def export_dataframe_to_csv(self, df, foldername, filename):
+        """Save a pandas dataframe
+        
+        Parameters
+        =========
+        
+        df: Dataframe
+            The dataframe to be saved.
+        
+        foldername: string
+            The foldername of the folder that contains the dataset.
+        
+        filename: string
+            The filename of the csv file.
+        """
         directory = foldername + '/' + filename
         
         try:
@@ -51,7 +92,21 @@ class FileManager:
         
         return None
     
-    def export_txt_file(self, foldername, content, filename):
+    def export_txt_file(self, content, foldername, filename):
+        """Save a text file
+        
+        Parameters
+        =========
+        
+        content: string
+            The text.
+        
+        foldername: string
+            The foldername of the folder that contains the dataset.
+        
+        filename: string
+            The filename of the csv file.
+        """
         directory = foldername + '/' + filename
         
         try:

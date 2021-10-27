@@ -1,3 +1,9 @@
+"""
+Model configuration.
+
+CAUTION: Changing parameters may break the code.
+"""
+
 # Class names
 class_names = ['related', 'unrelated']
 
@@ -11,7 +17,7 @@ VOCAB_NAME = 'bert-base-uncased'
 PRE_TRAINED_MODEL_NAME = 'bert-base-uncased'
 
 # Model filename
-MODEL_DIR = './models/model_epochs30Sept/model_state_2.pth'
+MODEL_DIR = './models/model_epochs19Oct/model_state_1.pth'
 
 # Set DataLoader hyperparameters
 MAX_LENGTH = 80
