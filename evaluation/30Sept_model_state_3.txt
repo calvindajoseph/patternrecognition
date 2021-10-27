@@ -1,0 +1,73 @@
+Model_state_3
+Batch 1/20
+Accuracy 0.8209999799728394
+Batch runtime 1m 54s
+Batch 2/20
+Accuracy 0.8289999961853027
+Batch runtime 1m 48s
+Batch 3/20
+Accuracy 0.8019999861717224
+Batch runtime 2m 0s
+Batch 4/20
+Accuracy 0.8050000071525574
+Batch runtime 1m 57s
+Batch 5/20
+Accuracy 0.8169999718666077
+Batch runtime 2m 3s
+Batch 6/20
+Accuracy 0.8100000023841858
+Batch runtime 1m 50s
+Batch 7/20
+Accuracy 0.8270000219345093
+Batch runtime 1m 52s
+Batch 8/20
+Accuracy 0.796999990940094
+Batch runtime 2m 3s
+Batch 9/20
+Accuracy 0.8100000023841858
+Batch runtime 2m 3s
+Batch 10/20
+Accuracy 0.8230000138282776
+Batch runtime 2m 3s
+Batch 11/20
+Accuracy 0.8109999895095825
+Batch runtime 2m 5s
+Batch 12/20
+Accuracy 0.7940000295639038
+Batch runtime 2m 3s
+Batch 13/20
+Accuracy 0.8130000233650208
+Batch runtime 2m 10s
+Batch 14/20
+Accuracy 0.8130000233650208
+Batch runtime 2m 20s
+Batch 15/20
+Accuracy 0.8130000233650208
+Batch runtime 2m 29s
+Batch 16/20
+Accuracy 0.8339999914169312
+Batch runtime 2m 8s
+Batch 17/20
+Accuracy 0.7860000133514404
+Batch runtime 2m 14s
+Batch 18/20
+Accuracy 0.8059999942779541
+Batch runtime 2m 18s
+Batch 19/20
+Accuracy 0.8149999976158142
+Batch runtime 2m 7s
+Batch 20/20
+Accuracy 0.8050000071525574
+Batch runtime 1m 58s
+Evaluation runtime 41m 57s
+Mean score: 0.811549961566925
+Standard Deviation score: 0.011620990931987762
+              precision    recall  f1-score   support
+
+     related       0.82      0.80      0.81     10000
+   unrelated       0.80      0.82      0.81     10000
+
+    accuracy                           0.81     20000
+   macro avg       0.81      0.81      0.81     20000
+weighted avg       0.81      0.81      0.81     20000
+

@@ -1,0 +1,89 @@
+
+Model_state_0
+Batch 1/20
+Accuracy 0.7799999713897705
+Batch runtime 1m 27s
+Batch 2/20
+Accuracy 0.8149999976158142
+Batch runtime 1m 31s
+Batch 3/20
+Accuracy 0.7979999780654907
+Batch runtime 1m 32s
+Batch 4/20
+Accuracy 0.7850000262260437
+Batch runtime 1m 33s
+Batch 5/20
+Accuracy 0.7850000262260437
+Batch runtime 1m 33s
+Model_state_4
+Batch 1/20
+Accuracy 0.8130000233650208
+Batch runtime 1m 52s
+Batch 2/20
+Accuracy 0.8339999914169312
+Batch runtime 1m 43s
+Batch 3/20
+Accuracy 0.7960000038146973
+Batch runtime 1m 42s
+Batch 4/20
+Accuracy 0.8209999799728394
+Batch runtime 2m 27s
+Batch 5/20
+Accuracy 0.8220000267028809
+Batch runtime 3m 8s
+Batch 6/20
+Accuracy 0.7879999876022339
+Batch runtime 3m 14s
+Batch 7/20
+Accuracy 0.8289999961853027
+Batch runtime 3m 18s
+Batch 8/20
+Accuracy 0.824999988079071
+Batch runtime 3m 15s
+Batch 9/20
+Accuracy 0.7929999828338623
+Batch runtime 3m 14s
+Batch 10/20
+Accuracy 0.8130000233650208
+Batch runtime 3m 16s
+Batch 11/20
+Accuracy 0.8019999861717224
+Batch runtime 3m 17s
+Batch 12/20
+Accuracy 0.8050000071525574
+Batch runtime 3m 12s
+Batch 13/20
+Accuracy 0.8059999942779541
+Batch runtime 3m 14s
+Batch 14/20
+Accuracy 0.8100000023841858
+Batch runtime 3m 10s
+Batch 15/20
+Accuracy 0.8109999895095825
+Batch runtime 3m 6s
+Batch 16/20
+Accuracy 0.8159999847412109
+Batch runtime 2m 50s
+Batch 17/20
+Accuracy 0.8159999847412109
+Batch runtime 3m 21s
+Batch 18/20
+Accuracy 0.7950000166893005
+Batch runtime 3m 27s
+Batch 19/20
+Accuracy 0.8040000200271606
+Batch runtime 3m 27s
+Batch 20/20
+Accuracy 0.8259999752044678
+Batch runtime 3m 26s
+Evaluation runtime 60m 16s
+Mean score: 0.8112500309944153
+Standard Deviation score: 0.012405138462781906
+              precision    recall  f1-score   support
+
+     related       0.82      0.80      0.81     10000
+   unrelated       0.80      0.82      0.81     10000
+
+    accuracy                           0.81     20000
+   macro avg       0.81      0.81      0.81     20000
+weighted avg       0.81      0.81      0.81     20000

@@ -1,8 +1,67 @@
-30 Sept Model Epoch 2
-
-Mean score: 0.8137999773025513
-Standard Deviation: 0.009785705246031284
-
+Model_state_2
+Batch 1/20
+Accuracy 0.8199999928474426
+Batch runtime 1m 45s
+Batch 2/20
+Accuracy 0.8100000023841858
+Batch runtime 1m 52s
+Batch 3/20
+Accuracy 0.8209999799728394
+Batch runtime 1m 51s
+Batch 4/20
+Accuracy 0.8080000281333923
+Batch runtime 1m 38s
+Batch 5/20
+Accuracy 0.8330000042915344
+Batch runtime 1m 40s
+Batch 6/20
+Accuracy 0.8050000071525574
+Batch runtime 1m 38s
+Batch 7/20
+Accuracy 0.8209999799728394
+Batch runtime 1m 37s
+Batch 8/20
+Accuracy 0.8309999704360962
+Batch runtime 1m 40s
+Batch 9/20
+Accuracy 0.8169999718666077
+Batch runtime 1m 35s
+Batch 10/20
+Accuracy 0.8339999914169312
+Batch runtime 1m 34s
+Batch 11/20
+Accuracy 0.8040000200271606
+Batch runtime 1m 36s
+Batch 12/20
+Accuracy 0.8059999942779541
+Batch runtime 1m 33s
+Batch 13/20
+Accuracy 0.8100000023841858
+Batch runtime 1m 33s
+Batch 14/20
+Accuracy 0.8069999814033508
+Batch runtime 1m 34s
+Batch 15/20
+Accuracy 0.7829999923706055
+Batch runtime 1m 34s
+Batch 16/20
+Accuracy 0.8040000200271606
+Batch runtime 1m 42s
+Batch 17/20
+Accuracy 0.8050000071525574
+Batch runtime 1m 38s
+Batch 18/20
+Accuracy 0.8299999833106995
+Batch runtime 1m 38s
+Batch 19/20
+Accuracy 0.8230000138282776
+Batch runtime 1m 36s
+Batch 20/20
+Accuracy 0.8040000200271606
+Batch runtime 1m 34s
+Evaluation runtime 33m 15s
+Mean score: 0.813800036907196
+Standard Deviation score: 0.012516383081674576
               precision    recall  f1-score   support
 
      related       0.83      0.79      0.81     10000
@@ -11,3 +70,4 @@ Standard Deviation: 0.009785705246031284
     accuracy                           0.81     20000
    macro avg       0.81      0.81      0.81     20000
 weighted avg       0.81      0.81      0.81     20000
+
