@@ -17,7 +17,7 @@ VOCAB_NAME = 'bert-base-uncased'
 PRE_TRAINED_MODEL_NAME = 'bert-base-uncased'
 
 # Model filename
-MODEL_DIR = './models/model_epochs19Oct/model_state_1.pth'
+MODEL_DIR = './models/final_model.pth'
 
 # Set DataLoader hyperparameters
 MAX_LENGTH = 80

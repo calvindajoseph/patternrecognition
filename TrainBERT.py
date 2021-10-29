@@ -48,7 +48,7 @@ VOCAB_NAME = config.VOCAB_NAME
 PRE_TRAINED_MODEL_NAME = config.PRE_TRAINED_MODEL_NAME
 
 # Set model folder
-model_folder = 'model_epochs_30Sept_ver2'
+model_folder = 'model_epochs_ver3'
 
 # Set DataLoader hyperparameters
 MAX_LENGTH = config.MAX_LENGTH
