@@ -21,9 +21,9 @@ The code were written in Spyder 5. To install spyder, simply download Anaconda.
 ### Libraries
 Please install all modules. Otherwise none of the code would run.
 
-Scikit learn. Download: https://scikit-learn.org/stable/install.html
-Pytorch. Download: https://pytorch.org/
-Huggingface Library: https://huggingface.co/transformers/installation.html
+* Scikit learn. Download: https://scikit-learn.org/stable/install.html
+* Pytorch. Download: https://pytorch.org/
+* Huggingface Library: https://huggingface.co/transformers/installation.html
 
 ### Update Anaconda
 On Windows, to update Anaconda open Anaconda Prompt. Then type in:
