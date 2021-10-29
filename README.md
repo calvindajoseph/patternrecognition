@@ -33,10 +33,13 @@ On Windows, to update Anaconda open Anaconda Prompt. Then type in:
 For updating spyder, after updating Anaconda, type in (in Anaconda Prompt):
 > $ conda install spyder=5.0.5
 
-### Huggingface
-
 ### Before running any code
-Please unzip the fake-news-pair-classification-challenge.zip and name the train.csv to fake-news-pair-classification-challenge.csv in the files folder
+
+1. Please unzip the fake-news-pair-classification-challenge.zip and name the train.csv to fake-news-pair-classification-challenge.csv in the files folder.
+2. Please ensure the libraries are downloaded.
+3. The full model is available here: https://drive.google.com/drive/folders/1UQh55mVcztmEB2JEexUOxrrQSZrYDWmG?usp=sharing
+
+* Note: The model is too big for our Github repo, so please download our model from the Google Drive link.
 
 ## Code Structure
 The majority of the code was written with object oriented programming.
@@ -63,7 +66,7 @@ Any dataset related classes are in this file.
 ### ModelClasses.py
 Any model related classes are in this file.
 
-## General Flow.py
+## General Flow
 Please follow the guidelines to know the chronology of the project.
 
 ### Preprocessing
