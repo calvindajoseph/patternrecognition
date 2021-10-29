@@ -30,8 +30,6 @@ def predict():
     second = str(second_sentence.get())
     prediction_str = classifier.print_prediction(first, second)
     txt_logs.delete('1.0', tk.END)
-    print(first)
-    print(second)
     txt_logs.insert(tk.INSERT, prediction_str)
 
 # Set tkinter variables for first and second sentence
