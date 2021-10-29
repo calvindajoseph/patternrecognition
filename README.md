@@ -38,6 +38,7 @@ For updating spyder, after updating Anaconda, type in (in Anaconda Prompt):
 1. Please unzip the fake-news-pair-classification-challenge.zip and name the train.csv to fake-news-pair-classification-challenge.csv in the files folder.
 2. Please ensure the libraries are downloaded.
 3. The full model is available here: https://drive.google.com/drive/folders/1UQh55mVcztmEB2JEexUOxrrQSZrYDWmG?usp=sharing
+4. Save the model under ./models directory.
 
 * Note: The model is too big for our Github repo, so please download our model from the Google Drive link.
 
